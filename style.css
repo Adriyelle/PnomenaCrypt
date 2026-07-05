@@ -1,0 +1,660 @@
+/* ========================================
+   PnomenaCrypt v1.0
+   Part 1 - Foundation
+======================================== */
+
+:root{
+
+    --bg:#0d1117;
+    --surface:#161b22;
+    --surface-hover:#1f2630;
+
+    --border:#30363d;
+
+    --primary:#58a6ff;
+
+    --text:#f0f6fc;
+
+    --muted:#8b949e;
+
+    --success:#3fb950;
+
+    --danger:#f85149;
+
+    --radius:12px;
+
+    --transition:.18s ease;
+
+    --shadow:
+        0 10px 30px rgba(0,0,0,.45);
+
+}
+
+*{
+
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    font-size:16px;
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    min-height:100vh;
+
+    line-height:1.6;
+
+    -webkit-font-smoothing:antialiased;
+
+}
+
+.wrapper{
+
+    width:min(100%,650px);
+
+    margin:auto;
+
+    padding:22px;
+
+}
+
+/* =====================
+      Header
+===================== */
+
+header{
+
+    margin-bottom:28px;
+
+}
+
+header h1{
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    letter-spacing:-1px;
+
+}
+
+header p{
+
+    margin-top:6px;
+
+    color:var(--muted);
+
+    font-size:.95rem;
+
+}
+
+/* =====================
+       Card
+===================== */
+
+.card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    padding:20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+/* =====================
+      Typography
+===================== */
+
+label{
+
+    display:block;
+
+    margin-top:18px;
+
+    margin-bottom:8px;
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+}
+
+small{
+
+    display:block;
+
+    margin-top:8px;
+
+    color:var(--muted);
+
+    font-size:.82rem;
+
+}
+
+/* =====================
+     Footer
+===================== */
+
+footer{
+
+    margin-top:24px;
+
+    text-align:center;
+
+}
+
+footer span{
+
+    color:var(--muted);
+
+    font-size:.82rem;
+
+}
+
+/* =====================
+   Desktop Adjustment
+===================== */
+
+@media(min-width:768px){
+
+    .wrapper{
+
+        padding:40px;
+
+    }
+
+    header h1{
+
+        font-size:2.4rem;
+
+    }
+
+    .card{
+
+        padding:30px;
+
+    }
+
+}
+
+/* ========================================
+   PnomenaCrypt v1.0
+   Part 2 - Inputs & Buttons
+======================================== */
+
+/* =====================
+      Textarea
+===================== */
+
+textarea{
+
+    width:100%;
+
+    min-height:170px;
+
+    resize:vertical;
+
+    padding:16px;
+
+    margin-bottom:10px;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    outline:none;
+
+    font-family:inherit;
+
+    font-size:.95rem;
+
+    transition:var(--transition);
+
+}
+
+textarea::placeholder{
+
+    color:var(--muted);
+
+}
+
+textarea:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 3px rgba(88,166,255,.15);
+
+}
+
+/* =====================
+        Input
+===================== */
+
+input{
+
+    width:100%;
+
+    height:52px;
+
+    padding:0 16px;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    outline:none;
+
+    font-size:1rem;
+
+    font-family:inherit;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    transition:var(--transition);
+
+}
+
+input::placeholder{
+
+    color:var(--muted);
+
+}
+
+input:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 3px rgba(88,166,255,.15);
+
+}
+
+/* =====================
+       Buttons
+===================== */
+
+.buttons{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:24px;
+
+    margin-bottom:22px;
+
+}
+
+/* Shared Button */
+
+button{
+
+    appearance:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+/* Encrypt */
+
+#encrypt{
+
+    flex:1;
+
+    height:48px;
+
+    background:var(--primary);
+
+    color:white;
+
+    border-radius:var(--radius);
+
+}
+
+#encrypt:hover{
+
+    filter:brightness(1.08);
+
+}
+
+#encrypt:active{
+
+    transform:scale(.98);
+
+}
+
+/* Decrypt */
+
+#decrypt{
+
+    flex:1;
+
+    height:48px;
+
+    background:#21262d;
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+}
+
+#decrypt:hover{
+
+    background:#30363d;
+
+}
+
+#decrypt:active{
+
+    transform:scale(.98);
+
+}
+
+/* Copy */
+
+.copy{
+
+    width:100%;
+
+    height:48px;
+
+    margin-top:18px;
+
+    background:#21262d;
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+}
+
+.copy:hover{
+
+    background:#30363d;
+
+}
+
+.copy:active{
+
+    transform:scale(.98);
+
+}
+
+/* =====================
+      Mobile
+===================== */
+
+@media(max-width:600px){
+
+    .buttons{
+
+        flex-direction:column;
+
+    }
+
+    #encrypt,
+    #decrypt{
+
+        width:100%;
+
+    }
+
+}
+
+/* ========================================
+   PnomenaCrypt v1.0
+   Part 3 - Polish & Finishing
+======================================== */
+
+/* ========= Scrollbar ========= */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:var(--bg);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#30363d;
+
+    border-radius:999px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#484f58;
+
+}
+
+/* ========= Selection ========= */
+
+::selection{
+
+    background:rgba(88,166,255,.35);
+
+    color:#ffffff;
+
+}
+
+/* ========= Card Animation ========= */
+
+.card{
+
+    animation:fadeUp .45s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(18px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ========= Smooth Hover ========= */
+
+.card{
+
+    transition:.2s ease;
+
+}
+
+.card:hover{
+
+    border-color:#3b434b;
+
+}
+
+/* ========= Focus Ring ========= */
+
+textarea:focus,
+input:focus{
+
+    transform:translateY(-1px);
+
+}
+
+/* ========= Placeholder ========= */
+
+textarea::placeholder,
+input::placeholder{
+
+    opacity:.8;
+
+}
+
+/* ========= Disabled ========= */
+
+button:disabled{
+
+    opacity:.55;
+
+    cursor:not-allowed;
+
+}
+
+/* ========= Footer ========= */
+
+footer{
+
+    user-select:none;
+
+}
+
+/* ========= Better Mobile ========= */
+
+@media(max-width:480px){
+
+    body{
+
+        padding-bottom:30px;
+
+    }
+
+    .wrapper{
+
+        padding:18px;
+
+    }
+
+    .card{
+
+        padding:18px;
+
+    }
+
+    header h1{
+
+        font-size:1.8rem;
+
+    }
+
+    header p{
+
+        font-size:.9rem;
+
+    }
+
+    textarea{
+
+        min-height:150px;
+
+    }
+
+}
+
+/* ========= Desktop ========= */
+
+@media(min-width:900px){
+
+    .wrapper{
+
+        max-width:720px;
+
+    }
+
+}
+
+/* ========= Remove Blue Highlight (Mobile) ========= */
+
+*{
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+/* ========= Input Autofill ========= */
+
+input:-webkit-autofill{
+
+    -webkit-box-shadow:0 0 0 1000px var(--bg) inset;
+
+    -webkit-text-fill-color:var(--text);
+
+}
+
+/* ========= Transition ========= */
+
+button,
+input,
+textarea,
+.card{
+
+    transition:
+
+        background .18s ease,
+
+        color .18s ease,
+
+        border-color .18s ease,
+
+        box-shadow .18s ease,
+
+        transform .18s ease;
+
+}

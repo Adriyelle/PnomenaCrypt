@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PnomenaCrypt</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <header>
+
+        <h1>PnomenaCrypt</h1>
+
+        <p>
+            Encrypt messages with your own private key.
+        </p>
+
+    </header>
+
+    <section class="card">
+
+        <label>
+
+            Message
+
+        </label>
+
+        <textarea
+                id="message"
+                placeholder="Type your message..."
+        ></textarea>
+
+        <label>
+
+            Hex Key
+
+        </label>
+
+        <input
+                id="key"
+                type="text"
+                maxlength="4"
+                placeholder="A91F"
+        >
+
+        <small>
+
+            Only 0-9 and A-F • 4 Characters
+
+        </small>
+
+        <div class="buttons">
+
+            <button id="encrypt">
+
+                Encrypt
+
+            </button>
+
+            <button id="decrypt">
+
+                Decrypt
+
+            </button>
+
+        </div>
+
+        <label>
+
+            Result
+
+        </label>
+
+        <textarea
+                id="result"
+                readonly
+                placeholder="Encrypted message..."
+        ></textarea>
+
+        <button class="copy">
+
+            Copy Result
+
+        </button>
+
+    </section>
+
+    <footer>
+
+    <span>
+
+        PnomenaCrypt v1.0
+
+    </span>
+
+    <br>
+
+    <small>
+
+        © 2026 Adriyelle P. Patawaran. All Rights Reserved.
+
+    </small>
+
+</footer>
+
+</div>
+
+<script src="script.min.js"></script>
+
+
+
+</body>
+
+</html>
